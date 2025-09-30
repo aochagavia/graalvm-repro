@@ -1,0 +1,3 @@
+object MyObject {
+    fun noop() {}
+}
