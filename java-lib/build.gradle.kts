@@ -4,7 +4,6 @@ import java.nio.file.StandardCopyOption
 
 plugins {
     java
-    kotlin("jvm")
 }
 
 repositories {
@@ -147,14 +146,12 @@ tasks.register<Exec>("buildNativeLibrary") {
         }
 
         val jarFile = tasks.jar.get().archiveFile.get().asFile
-        val kotlinRuntimeJarFile = configurations.runtimeClasspath.get().find { it -> it.path.contains("org.jetbrains.kotlin") }!!
-
         commandLine(
             nativeImageExe.absolutePath,
             "--shared",
-            "-cp", "${jarFile.absolutePath}:${kotlinRuntimeJarFile.absolutePath}",
+            "-cp", "${jarFile.absolutePath}",
             "-H:-DeleteLocalSymbols",
-            "-o", "kotlin-lib",
+            "-o", "java-lib",
         )
     }
 }

@@ -1,3 +1,10 @@
+build
+
+.idea
+.kotlin
+.gradle
+/**/gradle/jdk
+
 # GraalVM native image artifacts
 *.a
 *.so
