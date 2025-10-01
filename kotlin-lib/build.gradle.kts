@@ -153,7 +153,9 @@ tasks.register<Exec>("buildNativeLibrary") {
             nativeImageExe.absolutePath,
             "--shared",
             "-cp", "${jarFile.absolutePath}:${kotlinRuntimeJarFile.absolutePath}",
-            "-H:-DeleteLocalSymbols",
+            "-H:JNIConfigurationFiles=jni-config.json",
+            "-H:+TraceNativeToolUsage",
+            "-H:TempDirectory=native-image-tmp",
             "-o", "kotlin-lib",
         )
     }

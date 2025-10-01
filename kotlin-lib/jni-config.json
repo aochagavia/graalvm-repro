@@ -1,0 +1,9 @@
+[
+  {
+    "name": "MyJavaClass",
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] },
+      { "name": "noop", "parameterTypes": [] }
+    ]
+  }
+]

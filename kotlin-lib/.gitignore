@@ -2,3 +2,5 @@
 
 # GraalVM
 gradle/jdk
+native-image-tmp
+build-fatlib
